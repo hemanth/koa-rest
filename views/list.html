@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+  <ul class="books">
+    {% for book in books %}
+      <li class="name">{{ book.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

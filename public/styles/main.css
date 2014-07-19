@@ -1,0 +1,25 @@
+ul {
+	margin: 100px auto 0;
+	list-style: none;
+	width: 700px;
+	font: 30px helvetica;
+	font-weight: 100;
+}
+
+li {
+  margin-bottom: 50px;
+}
+
+form {
+  width: 700px;
+  margin: 0 auto;	
+}
+
+textarea {
+  border-style: none;
+  width: 700px;
+  margin-left: 20px;
+  height: 100px;
+  font: 30px helvetica;
+  font-weight: 100;
+}
