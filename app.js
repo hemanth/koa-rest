@@ -14,6 +14,7 @@ app.use(logger());
 app.use(route.get('/', books.home));
 app.use(route.get('/books', books.list));
 app.use(route.get('/books/:id', books.fetch));
+app.use(route.post('/books/', books.add));
 
 // Serve static files
 app.use(serve(path.join(__dirname, 'public')));
@@ -22,6 +23,6 @@ app.use(serve(path.join(__dirname, 'public')));
 app.use(compress());
 
 if (!module.parent) {
-    app.listen(1337);
-    console.log('listening on port l337');
+  app.listen(1337);
+  console.log('listening on port l337');
 }

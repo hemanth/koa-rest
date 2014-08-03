@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{% block title %}Messages{% endblock %}</title>
+	<title>{% block title %}koajs REST API{% endblock %}</title>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
   <section id="content">
     {% block content %}
-      <p>Forgot to add content?</p>
+      <ul>
+        <li>See <a href="/books">all</a> the books.</li>
+        <li>Get them by <a href="/books/1">id</a>.</li>
+      </ul>
     {% endblock %}
   </section>
 </body>

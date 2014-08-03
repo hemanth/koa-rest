@@ -15,7 +15,7 @@ $ cd koa-rest
 
 $ npm install
 
-$ npm run
+$ npm run start
 
 ```
 
