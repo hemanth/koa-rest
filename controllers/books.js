@@ -20,16 +20,19 @@ var render = views(__dirname + '/../views', {
 });
 
 module.exports.home = function * home() {
+  if ('GET' != this.method) return yield next;
   this.body = yield render('layout');
 };
 
 module.exports.list = function * list() {
+  if ('GET' != this.method) return yield next;
   this.body = yield render('list', {
     'books': yield books.find({})
   });
 };
 
 module.exports.fetch = function * fetch(id) {
+  if ('GET' != this.method) return yield next;
   var book = yield books.find({}, {
     'skip': id - 1,
     'limit': 1
@@ -41,5 +44,13 @@ module.exports.fetch = function * fetch(id) {
 };
 
 module.exports.add = function * add(data) {
-  this.body = 'TDB';
+  if ('POST' != this.method) return yield next;
+  var book = yield parse(this, {
+    limit: '1kb'
+  });
+  var inserted = yield books.insert(book);
+  if (!inserted) {
+    this.throw(303, "The book couldn't be added.");
+  }
+  this.body = 'Done!';
 }

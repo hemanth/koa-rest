@@ -28,4 +28,6 @@ GET /books -> List all the books.
 
 GET /books/:id -> Returns the book for the given ID
 
+POST /books/ -> JSON data to inserted to the books db.
+
 ```
