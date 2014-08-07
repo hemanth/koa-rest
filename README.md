@@ -30,4 +30,6 @@ GET /books/:id -> Returns the book for the given ID
 
 POST /books/ -> JSON data to inserted to the books db.
 
+PUT /books/:id -> JSON data to update the book data.
+
 ```

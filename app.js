@@ -11,10 +11,12 @@ var app = module.exports = koa();
 // Logger
 app.use(logger());
 
+console.log(route);
 app.use(route.get('/', books.home));
 app.use(route.get('/books', books.list));
 app.use(route.get('/books/:id', books.fetch));
 app.use(route.post('/books/', books.add));
+app.use(route.put('/books/:id', books.modify));
 
 // Serve static files
 app.use(serve(path.join(__dirname, 'public')));

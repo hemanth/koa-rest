@@ -37,7 +37,7 @@ module.exports.fetch = function * fetch(id) {
     'skip': id - 1,
     'limit': 1
   });
-  if (!book) {
+  if (book.length === 0) {
     this.throw(404, 'book with id = ' + id + ' was not found');
   }
   this.body = yield book;
@@ -50,7 +50,36 @@ module.exports.add = function * add(data) {
   });
   var inserted = yield books.insert(book);
   if (!inserted) {
-    this.throw(303, "The book couldn't be added.");
+    this.throw(405, "The book couldn't be added.");
   }
   this.body = 'Done!';
-}
+};
+
+module.exports.modify = function * modify(id) {
+  if ('PUT' != this.method) return yield next;
+
+  var data = yield parse(this, {
+    limit: '1kb'
+  });
+
+  var book = yield books.find({}, {
+    'skip': id - 1,
+    'limit': 1
+  });
+
+  console.log(book);
+  if (book.length === 0) {
+    this.throw(404, 'book with id = ' + id + ' was not found');
+  }
+
+  var update = books.update(book[0], {
+    $set: data
+  });
+
+  if (!update) {
+    console.log('update', update);
+    this.throw(405, "Unable to update.");
+  } else {
+    this.body = "Done";
+  }
+};
