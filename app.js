@@ -17,6 +17,8 @@ app.use(route.get('/books', books.list));
 app.use(route.get('/books/:id', books.fetch));
 app.use(route.post('/books/', books.add));
 app.use(route.put('/books/:id', books.modify));
+app.use(route.delete('/books/:id', books.remove));
+
 
 // Serve static files
 app.use(serve(path.join(__dirname, 'public')));

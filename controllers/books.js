@@ -67,19 +67,39 @@ module.exports.modify = function * modify(id) {
     'limit': 1
   });
 
-  console.log(book);
   if (book.length === 0) {
     this.throw(404, 'book with id = ' + id + ' was not found');
   }
 
-  var update = books.update(book[0], {
+  var updated = books.update(book[0], {
     $set: data
   });
 
-  if (!update) {
-    console.log('update', update);
+  if (!updated) {
     this.throw(405, "Unable to update.");
   } else {
     this.body = "Done";
   }
 };
+
+module.exports.remove = function * remove(id) {
+  if ('DELETE' != this.method) return yield next;
+
+  var book = yield books.find({}, {
+    'skip': id - 1,
+    'limit': 1
+  });
+
+  if (book.length === 0) {
+    this.throw(404, 'book with id = ' + id + ' was not found');
+  }
+
+  var removed = books.remove(book[0]);
+
+  if (!removed) {
+    this.throw(405, "Unable to delete.");
+  } else {
+    this.body = "Done";
+  }
+
+}

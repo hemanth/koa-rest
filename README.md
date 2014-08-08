@@ -32,4 +32,6 @@ POST /books/ -> JSON data to inserted to the books db.
 
 PUT /books/:id -> JSON data to update the book data.
 
+DELETE /books/:id -> Removes the book with the specified ID.
+
 ```
