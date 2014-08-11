@@ -11,7 +11,7 @@ var books = wrap(db.get('books'));
 // From lifeofjs
 co(function * () {
   var books = yield books.find({});
-})
+});
 
 var render = views(__dirname + '/../views', {
   map: {
