@@ -34,12 +34,12 @@ PUT /books/:id -> JSON data to update the book data.
 
 DELETE /books/:id -> Removes the book with the specified ID.
 
+OPTIONS / -> Gives the list of allowed request types.
+
+TRACE / -> Blocked for security reasons.
+
 ```
 
 __TODO:__
-
-* OPTIONS
-
-* TRACE
 
 * HEAD

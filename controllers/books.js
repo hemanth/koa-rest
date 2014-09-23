@@ -102,4 +102,15 @@ module.exports.remove = function * remove(id) {
     this.body = "Done";
   }
 
-}
+};
+
+module.exports.options = function *() {
+  this.body = "Allow: HEAD,GET,PUT,DELETE,OPTIONS";
+};
+
+module.exports.trace = function *() {
+  this.body = "Smart! But you can't trace.";
+};
+
+
+
