@@ -13,6 +13,8 @@ $ git clone https://github.com/hemanth/kao-rest
 
 $ cd koa-rest
 
+$ mongoimport -d library -c books ./db.json  # Import the DB, makes sure mongod is running.
+
 $ npm install
 
 $ npm run start
