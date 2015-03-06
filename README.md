@@ -1,6 +1,6 @@
 #koa-REST
 
-> REST demo with koa. (wip)
+> REST demo with koa.
 
 This is a simple demo of RESTful API with [koajs](http://koajs.com/)
 
@@ -38,7 +38,7 @@ DELETE /books/:id -> Removes the book with the specified ID.
 
 OPTIONS / -> Gives the list of allowed request types.
 
-HEAD / -> HTTP headers only, no body. 
+HEAD / -> HTTP headers only, no body.
 
 TRACE / -> Blocked for security reasons.
 
