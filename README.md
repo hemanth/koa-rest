@@ -2,7 +2,7 @@
 
 > REST demo with koa.
 
-This is a simple demo of RESTful API with [koajs](http://koajs.com/)
+This is a simple demo of RESTful API with [koajs](http://koajs.com/) checkout the [live demo](http://lexicon-tactic.codio.io:1337/)
 
 
 __How to try it?__
