@@ -38,10 +38,8 @@ DELETE /books/:id -> Removes the book with the specified ID.
 
 OPTIONS / -> Gives the list of allowed request types.
 
+HEAD / -> HTTP headers only, no body. 
+
 TRACE / -> Blocked for security reasons.
 
 ```
-
-__TODO:__
-
-* HEAD

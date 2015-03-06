@@ -19,27 +19,25 @@ var render = views(__dirname + '/../views', {
   }
 });
 
-module.exports.home = function * home() {
-  console.log("home");
-
+module.exports.home = function * home(next) {
   if ('GET' != this.method) return yield next;
   this.body = yield render('layout');
 };
 
-module.exports.list = function * list() {
-  console.log("list");
+module.exports.list = function * list(next) {
   if ('GET' != this.method) return yield next;
   this.body = yield render('list', {
     'books': yield books.find({})
   });
 };
 
-module.exports.all = function * all() {
+// This must be avoided, use ajax in the view.
+module.exports.all = function * all(next) {
   if ('GET' != this.method) return yield next;
   this.body = yield books.find({});
 };
 
-module.exports.fetch = function * fetch(id) {
+module.exports.fetch = function * fetch(id,next) {
   if ('GET' != this.method) return yield next;
   var book = yield books.find({}, {
     'skip': id - 1,
@@ -51,7 +49,7 @@ module.exports.fetch = function * fetch(id) {
   this.body = yield book;
 };
 
-module.exports.add = function * add(data) {
+module.exports.add = function * add(data,next) {
   if ('POST' != this.method) return yield next;
   var book = yield parse(this, {
     limit: '1kb'
@@ -63,7 +61,7 @@ module.exports.add = function * add(data) {
   this.body = 'Done!';
 };
 
-module.exports.modify = function * modify(id) {
+module.exports.modify = function * modify(id,next) {
   if ('PUT' != this.method) return yield next;
 
   var data = yield parse(this, {
@@ -90,7 +88,7 @@ module.exports.modify = function * modify(id) {
   }
 };
 
-module.exports.remove = function * remove(id) {
+module.exports.remove = function * remove(id,next) {
   if ('DELETE' != this.method) return yield next;
 
   var book = yield books.find({}, {
@@ -110,6 +108,10 @@ module.exports.remove = function * remove(id) {
     this.body = "Done";
   }
 
+};
+
+module.exports.head = function *(){
+  return;
 };
 
 module.exports.options = function *() {
