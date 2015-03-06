@@ -26,7 +26,7 @@ Open http://localhost:1337 to see the results.
 
 ```
 
-GET /books -> List all the books.
+GET /books -> List all the books in JSON.
 
 GET /books/:id -> Returns the book for the given ID
 

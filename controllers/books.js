@@ -20,15 +20,23 @@ var render = views(__dirname + '/../views', {
 });
 
 module.exports.home = function * home() {
+  console.log("home");
+
   if ('GET' != this.method) return yield next;
   this.body = yield render('layout');
 };
 
 module.exports.list = function * list() {
+  console.log("list");
   if ('GET' != this.method) return yield next;
   this.body = yield render('list', {
     'books': yield books.find({})
   });
+};
+
+module.exports.all = function * all() {
+  if ('GET' != this.method) return yield next;
+  this.body = yield books.find({});
 };
 
 module.exports.fetch = function * fetch(id) {
@@ -111,6 +119,3 @@ module.exports.options = function *() {
 module.exports.trace = function *() {
   this.body = "Smart! But you can't trace.";
 };
-
-
-
