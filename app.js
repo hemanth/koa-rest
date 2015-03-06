@@ -30,5 +30,5 @@ app.use(compress());
 
 if (!module.parent) {
   app.listen(1337);
-  console.log('listening on port l337');
+  console.log('listening on port 1337');
 }
