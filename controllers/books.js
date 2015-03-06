@@ -39,14 +39,18 @@ module.exports.all = function * all(next) {
 
 module.exports.fetch = function * fetch(id,next) {
   if ('GET' != this.method) return yield next;
-  var book = yield books.find({}, {
-    'skip': id - 1,
-    'limit': 1
-  });
-  if (book.length === 0) {
-    this.throw(404, 'book with id = ' + id + ' was not found');
+  // Quick hack.
+  if(id === ""+parseInt(id, 10)){
+    var book = yield books.find({}, {
+      'skip': id - 1,
+      'limit': 1
+    });
+    if (book.length === 0) {
+      this.throw(404, 'book with id = ' + id + ' was not found');
+    }
+    this.body = yield book;
   }
-  this.body = yield book;
+
 };
 
 module.exports.add = function * add(data,next) {

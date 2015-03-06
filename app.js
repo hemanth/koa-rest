@@ -12,8 +12,8 @@ var app = module.exports = koa();
 app.use(logger());
 
 app.use(route.get('/', books.home));
-app.use(route.get('/books', books.all));
-app.use(route.get('/view/books', books.list));
+app.use(route.get('/books/', books.all));
+app.use(route.get('/view/books/', books.list));
 app.use(route.get('/books/:id', books.fetch));
 app.use(route.post('/books/', books.add));
 app.use(route.put('/books/:id', books.modify));
