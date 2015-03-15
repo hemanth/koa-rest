@@ -9,7 +9,7 @@ __How to try it?__
 
 ```sh
 
-$ git clone https://github.com/hemanth/kao-rest
+$ git clone https://github.com/hemanth/kao-rest.git
 
 $ cd koa-rest
 
