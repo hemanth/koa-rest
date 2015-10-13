@@ -15,7 +15,7 @@
     "koa-compress": "^1.0.8",
     "koa-logger": "^1.2.2",
     "koa-route": "^2.4.0",
-    "koa-static": "^1.4.9",
+    "koa-static": "^1.5.0",
     "monk": "^1.0.0",
     "swig": "^1.4.2"
   },
