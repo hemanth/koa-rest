@@ -20,7 +20,7 @@
     "swig": "^1.4.2"
   },
   "devDependencies": {
-    "supertest": "^0.15.0",
+    "supertest": "^1.2.0",
     "mocha": "^2.1.0"
   }
 }
