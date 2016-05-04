@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "co": "^4.4.0",
-    "co-body": "^1.1.0",
+    "co-body": "^4.1.0",
     "co-monk": "^1.0.0",
     "co-views": "^0.3.0",
     "koa": "^1.2.0",
