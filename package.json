@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node --harmony app.js",
-    "test": "mocha --harmony"
+    "test": "mocha --harmony",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "co": "^4.4.0",
@@ -17,10 +19,12 @@
     "koa-route": "^2.4.0",
     "koa-static": "^2.0.0",
     "monk": "^3.0.5",
-    "swig": "^1.4.2"
+    "swig": "^1.4.2",
+    "snyk": "^1.21.2"
   },
   "devDependencies": {
     "supertest": "^2.0.0",
     "mocha": "^3.1.1"
-  }
+  },
+  "snyk": true
 }
