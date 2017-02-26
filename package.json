@@ -9,7 +9,7 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "co": "^4.4.0",
+    "co": "^4.6.0",
     "co-body": "^4.2.0",
     "co-monk": "^1.0.0",
     "co-views": "^0.3.0",
