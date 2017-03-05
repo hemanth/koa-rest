@@ -20,7 +20,7 @@
     "koa-static": "^2.0.0",
     "monk": "^4.0.0",
     "swig": "^1.4.2",
-    "snyk": "^1.24.6"
+    "snyk": "^1.25.0"
   },
   "devDependencies": {
     "supertest": "^3.0.0",
