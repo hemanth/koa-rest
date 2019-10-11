@@ -1,6 +1,13 @@
-version: v1.5.0
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
 ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:uglify-js:20151024':
     - swig > uglify-js:
         patched: '2016-12-02T03:57:08.827Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-11T06:51:57.035Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-11T06:51:57.035Z'
